@@ -139,7 +139,7 @@ class TeamEntity implements TeamEntityInterface
         $dataNaixementEntrenador = $faker->dateTimeBetween('-68 year', '-18 year');
         // entrenador
         $dataEntrenador = [
-            'id_role' => 2,
+            'id_role' => 3,
             'name' => $faker->firstName(),
             'surnames' => $faker->lastName(),
             'birthdate' => $dataNaixementEntrenador->format('Y-m-d'),
