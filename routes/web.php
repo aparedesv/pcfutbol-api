@@ -22,5 +22,6 @@ $router->post('auth/signin', 'AuthController@signin');
 
 $router->group(['middleware' => 'auth', 'prefix' => 'api'], function () use ($router) {
 
-    $router->get('auth/test', 'AuthController@test');
+    $router->post('home', 'PcFutbol\DashboardController@index');
+    // $router->get('auth/test', 'AuthController@test');
 });

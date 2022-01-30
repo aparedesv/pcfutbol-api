@@ -23,7 +23,7 @@ class AuthController extends Controller
 
                 $this->authEntity->signIn(
                     $request->input('email'),
-                    $request->input('password'),
+                    base64_decode($request->input('password')),
                 )
 
             );

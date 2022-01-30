@@ -4,14 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-use Illuminate\Database\Eloquent\SoftDeletes;
-
-class Usuaris extends Model
+class Team extends Model
 {
-
-    use SoftDeletes;
-
-    protected $table = 'usuaris';
+    protected $table = 'teams';
 
     protected $fillable = [
         'active',

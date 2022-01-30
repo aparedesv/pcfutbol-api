@@ -5,19 +5,19 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class RoleSeeder extends Seeder
+class TacticSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('roles')->insert([
+        DB::table('tactics')->insert([
             [
-                'description' => 'admin'
+                'description' => '4-4-2'
             ],
             [
-                'description' => 'player',
+                'description' => '4-3-3'
             ],
             [
-                'description' => 'coach',
+                'description' => '3-4-3'
             ],
         ]);
     }

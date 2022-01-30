@@ -23,12 +23,14 @@ class CreateUsersTable extends Migration
             $table->string('api_token_expiration')->nullable();
 
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 20);
+            $table->string('description', 50);
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('user_roles', function (Blueprint $table) {
@@ -37,11 +39,11 @@ class CreateUsersTable extends Migration
         });
 
         Schema::table('user_roles', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('id_user');
+            $table->foreign('id_user')->references('id')->on('users');
 
-            $table->unsignedBigInteger('role_id');
-            $table->foreign('role_id')->references('id')->on('roles');
+            $table->unsignedBigInteger('id_role');
+            $table->foreign('id_role')->references('id')->on('roles');
         });
     }
 
