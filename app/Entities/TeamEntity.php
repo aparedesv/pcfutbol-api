@@ -20,7 +20,12 @@ use App\Entities\Interfaces\TeamEntityInterface;
 
 class TeamEntity implements TeamEntityInterface
 {
-    public function newTeam(string $name, int $userId)
+    public function find(int $id) : ?Team
+    {
+        return Team::find($id);
+    }
+
+    public function newTeam(string $name)
     {
         // preparem el Factory per generar dades
         $faker = Factory::create();

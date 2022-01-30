@@ -26,11 +26,9 @@ $router->group(['middleware' => 'auth', 'prefix' => 'api'], function () use ($ro
     $router->post('home', 'PcFutbol\DashboardController@index');
 
     // teams
+    $router->post('team/{id}', 'PcFutbol\TeamController@show');
     $router->post('team/new', 'PcFutbol\TeamController@insert');
-    /* $router->post('team/new', function (Request $request) {
-        $this->validate($request, [
-            'name' => 'required',
-        ]);
-    }); */
-    // $router->get('auth/test', 'AuthController@test');
+
+    // people
+    $router->post('people', 'PcFutbol\PersonController@index');
 });

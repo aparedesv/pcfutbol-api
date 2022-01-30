@@ -6,8 +6,10 @@ use Illuminate\Support\ServiceProvider;
 
 use App\Entities\AuthEntity;
 use App\Entities\TeamEntity;
+use App\Entities\PersonEntity;
 use App\Entities\Interfaces\AuthEntityInterface;
 use App\Entities\Interfaces\TeamEntityInterface;
+use App\Entities\Interfaces\PersonEntityInterface;
 
 class EntitiesServiceProvider extends ServiceProvider
 {
@@ -26,6 +28,11 @@ class EntitiesServiceProvider extends ServiceProvider
         $this->app->bind(
             TeamEntityInterface::class,
             TeamEntity::class,
+        );
+
+        $this->app->bind(
+            PersonEntityInterface::class,
+            PersonEntity::class,
         );
     }
 }
