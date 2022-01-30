@@ -25,9 +25,12 @@ $router->group(['middleware' => 'auth', 'prefix' => 'api'], function () use ($ro
     // dashboard
     $router->post('home', 'PcFutbol\DashboardController@index');
 
+    // clubs
+    $router->post('club/{id}', 'PcFutbol\ClubController@show');
+
     // teams
     $router->post('team/{id}', 'PcFutbol\TeamController@show');
-    $router->post('team/new', 'PcFutbol\TeamController@insert');
+    $router->post('teams/new', 'PcFutbol\TeamController@insert');
 
     // people
     $router->post('people', 'PcFutbol\PersonController@index');

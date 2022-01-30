@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Pcfutbol;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\PcFutbolController;
 use App\Entities\Interfaces\PersonEntityInterface;
 
@@ -16,6 +15,6 @@ class PersonController extends PcFutbolController
 
     public function index()
     {
-        return $this->personEntity->paginate(12);
+        return $this->personEntity->paginate(ITEMS_PAGINACIO);
     }
 }

@@ -12,6 +12,7 @@ class Club extends Model
     protected $table = 'clubs';
 
     protected $fillable = [
+        'id_user',
         'id_location',
         'name',
         'balance',
