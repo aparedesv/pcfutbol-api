@@ -107,13 +107,13 @@ class PositionSeeder extends Seeder
                 'side' => 3
             ],
             [
-                'description' => 'segon davanter',
+                'description' => 'segon davanter 1',
                 'display' => 'SD',
                 'category' => 4,
                 'side' => 3
             ],
             [
-                'description' => 'segon davanter',
+                'description' => 'segon davanter 2',
                 'display' => 'SD',
                 'category' => 4,
                 'side' => 3

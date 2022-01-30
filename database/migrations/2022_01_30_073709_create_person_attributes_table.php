@@ -15,7 +15,18 @@ class CreatePersonAttributesTable extends Migration
     {
         Schema::create('person_attributes', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('id_person');
+            $table->foreign('id_person')->references('id')->on('people');
+
+            $table->string('technique', 2);
+            $table->string('aggressiveness', 2);
+            $table->string('speed', 2);
+            $table->string('fitness', 2);
+            $table->string('moral', 2);
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

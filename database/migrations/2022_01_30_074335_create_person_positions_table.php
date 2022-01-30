@@ -15,6 +15,13 @@ class CreatePersonPositionsTable extends Migration
     {
         Schema::create('person_positions', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('id_position');
+            $table->foreign('id_position')->references('id')->on('positions');
+
+            $table->unsignedBigInteger('id_person');
+            $table->foreign('id_person')->references('id')->on('people');
+
             $table->timestamps();
         });
     }

@@ -108,6 +108,9 @@ $app->register(App\Providers\EntitiesServiceProvider::class);
 |
 */
 
+// carreguem l'arxiu de constants
+require_once __DIR__.'/const.php';
+
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
 ], function ($router) {

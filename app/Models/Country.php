@@ -5,15 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Team extends Model
+class Country extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'teams';
+    protected $table = 'countries';
 
     protected $fillable = [
-        'id_tactic',
-        'id_brand',
+        'code',
         'name',
     ];
 }

@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-use App\Entities\Interfaces\AuthEntityInterface;
 use App\Entities\AuthEntity;
+use App\Entities\TeamEntity;
+use App\Entities\Interfaces\AuthEntityInterface;
+use App\Entities\Interfaces\TeamEntityInterface;
 
 class EntitiesServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,11 @@ class EntitiesServiceProvider extends ServiceProvider
         $this->app->bind(
             AuthEntityInterface::class,
             AuthEntity::class,
+        );
+
+        $this->app->bind(
+            TeamEntityInterface::class,
+            TeamEntity::class,
         );
     }
 }

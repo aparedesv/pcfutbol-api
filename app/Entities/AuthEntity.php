@@ -17,7 +17,7 @@ class AuthEntity implements AuthEntityInterface
 
         if($entry)
         {
-            // camparem password
+            // comparem password
             if(md5($password) == $entry->password)
             {
                 $entry->api_token = Str::random(100);
@@ -38,5 +38,19 @@ class AuthEntity implements AuthEntityInterface
         }
 
         throw new AccessDeniedException('access denied!');
+    }
+
+    public function checkToken(string $token)
+    {
+        // busquem l'usuari per token
+        $token = explode(' ', $token)[1];
+        $entry = User::where('api_token', $token)->first();
+
+        if($entry)
+        {
+            return $entry->id;
+        }
+
+        throw new AccessDeniedException('no valid user!');
     }
 }

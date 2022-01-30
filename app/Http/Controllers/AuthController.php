@@ -17,8 +17,8 @@ class AuthController extends Controller
 
     public function signIn(Request $request)
     {
-        try
-        {
+        try {
+
             return response()->json(
 
                 $this->authEntity->signIn(
@@ -27,9 +27,8 @@ class AuthController extends Controller
                 )
 
             );
-        }
-        catch(AccessDeniedException $ex)
-        {
+        } catch(AccessDeniedException $ex) {
+
             return response($ex->getMessage(), 400);
         }
     }
